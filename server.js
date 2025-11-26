@@ -4,6 +4,8 @@ import { databaseConnection } from "./src/config/db.js"
 import { loggerWithMorgan } from "./src/config/logger.js"
 
 import { router as categoryRoute } from "./src/modules/Categories/categoryRoutes.js"
+import { ApiError, errorHandler } from "./src/middleware/globalErrorHandler.js"
+
 
 // .env
 dotenv.config({ path: "config.env" })
@@ -23,9 +25,26 @@ app.use(express.json())
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Mount routes
 app.use("/api/v1/categories" , categoryRoute)
 
+// if not found route
+app.use( (req , res , next)=> {
+    next(ApiError(`can't find this route ${req.originalUrl}` , 404))
+})
+
+errorHandler(app)
 
 // running the app
 const PORT = process.env.PORT
-app.listen(PORT , () => {
+const server = app.listen(PORT , () => {
     console.log(`App Running on port >>> ${PORT}`)
+})
+
+
+// unhandeled rejection error
+process.on('unhandledRejection' , (err) => {
+    console.error(`Unhandled Rejection Error >>>> ${err}`)
+    // here if any api requests wait for completing it and shut down
+    server.close(()=> {
+        console.error(`app is shutting down`)
+        process.exit(1)
+    })
 })

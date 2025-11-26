@@ -10,8 +10,12 @@ export function databaseConnection () {
     mongoose.connect(URI)
         .then((conn)=> {
             console.log(`DataBase Connected Successfully on host: ${conn.connection.host}`)
-        }).catch((err)=> {
-            console.log(`DataBase Error: ${err}`)
-            process.exit(1);
         })
+
+// handled all error in server.js
+
+        // .catch((err)=> {
+        //     console.log(`DataBase Error: ${err}`)
+        //     process.exit(1);
+        // })
 }
