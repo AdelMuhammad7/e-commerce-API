@@ -4,6 +4,7 @@ import { databaseConnection } from "./src/config/db.js"
 import { loggerWithMorgan } from "./src/config/logger.js"
 
 import { router as categoryRoute } from "./src/modules/Categories/categoryRoutes.js"
+import { router as subCategoryRoute } from "./src/modules/SubCategories/subCategoryRoutes.js"
 import { ApiError, errorHandler } from "./src/middleware/globalErrorHandler.js"
 
 
@@ -24,6 +25,7 @@ app.use(express.json())
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Mount routes
 app.use("/api/v1/categories" , categoryRoute)
+app.use("/api/v1/subcategories" , subCategoryRoute)
 
 // if not found route
 app.use( (req , res , next)=> {
