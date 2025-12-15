@@ -17,14 +17,10 @@ const subCategorySchema = new mongoose.Schema({
 
     image: String,
 
-    // ⭐ parent object
-    parentCategory: {
-        id: { 
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Category",
-            required: [true, "subCategory must belong to category"]
-        },
-        name: String
+    category: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Category",
+        required: [true, "subCategory must belong to category"]
     }
 
 }, { timestamps: true });

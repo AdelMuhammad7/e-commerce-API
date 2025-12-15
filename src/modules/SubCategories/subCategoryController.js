@@ -12,27 +12,19 @@ export const createSubCategory = expressAsyncHandler(async (req, res) => {
 
     const { name, categoryId } = req.body;
 
-    // 1) Get category by ID
-    const category = await CategoryModel.findById(categoryId);
-    if (!category) {
-        return res.status(400).json({ message: "Category not found" });
-    }
-
     // 2) Create SubCategory with parent object
     const subCategory = await SubCategoryModel.create({
         name,
         slug: slugify(name),
-        parentCategory: {
-            id: categoryId,
-            name: category.name   // ⭐ هنا بقى
-        }
-    });
+        category: categoryId
+    })
 
     res.status(201).json({ data: subCategory });
 });
 
+// Get ==> "/api/v1/categories/:categoryId/subcategories"
 
-// @desc   ===> Get All SubCategories
+// @desc   ===> Get All SubCategories 
 // @route  ===> Get  /api/v1/subcategories
 // @access ===> Public
 export const getSubcategories = expressAsyncHandler (async (req ,res) => {
@@ -41,7 +33,11 @@ export const getSubcategories = expressAsyncHandler (async (req ,res) => {
     const limit = req.query.limit * 1 || 5
     const skip = (page - 1) * limit
 
-    const subCategories = await SubCategoryModel.find().skip(skip).limit(limit)
+    const subCategories = await SubCategoryModel
+        .find()
+        .skip(skip)
+        .limit(limit)
+        .populate({path: "category" , select: "name -_id"})
 
     res.status(200).json({
         results: subCategories.length,
@@ -58,7 +54,7 @@ export const getSubcategories = expressAsyncHandler (async (req ,res) => {
 export const getSubCategory = expressAsyncHandler( async (req , res , next) => {
     const id = req.params.id
     
-    const subCategory = await SubCategoryModel.findById(id)
+    const subCategory = await SubCategoryModel.findById(id).populate("category")
 
     if(!subCategory){
         return next(ApiError(`not found category for this id ${id}` , 404))
@@ -86,35 +82,23 @@ export const updateSubCategory = expressAsyncHandler(async (req, res, next) => {
         updateData.slug = slugify(name);
     }
 
-    // لو بعت categoryId (عايز يغيّر الأب)
+    // لو بعت categoryId (عايز يغير الأب)
     if (categoryId) {
         const category = await CategoryModel.findById(categoryId);
-        if (!category) {
-            return next(ApiError("Category not found", 400));
-        }
+        if (!category) return next(ApiError("Category not found", 400));
 
-        updateData.parentCategory = {
-            id: categoryId,
-            name: category.name
-        };
+        updateData.category = categoryId;
     }
 
     // Update
-    const subCategory = await SubCategoryModel.findOneAndUpdate(
-        { _id: id },
-        updateData,
-        { new: true }
-    );
-
-    if (!subCategory) {
-        return next(ApiError(`not found subCategory for this id ${id}`, 404));
-    }
-
-    res.status(200).json({
-        data: subCategory,
-        msg: "success"
+    const subCategory = await SubCategoryModel.findByIdAndUpdate(id, updateData, {
+        new: true,
     });
 
+    if (!subCategory)
+        return next(ApiError(`SubCategory not found for ID ${id}`, 404));
+
+    res.status(200).json({ data: subCategory, msg: "success" });
 });
 
 

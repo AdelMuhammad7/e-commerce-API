@@ -44,7 +44,7 @@ const server = app.listen(PORT , () => {
 // unhandeled rejection error
 process.on('unhandledRejection' , (err) => {
     console.error(`Unhandled Rejection Error >>>> ${err}`)
-    // here if any api requests wait for completing it and shut down
+    // here >> if any api requests , >>> wait for completing it and shut down
     server.close(()=> {
         console.error(`app is shutting down`)
         process.exit(1)
