@@ -22,7 +22,8 @@ export const createSubCategory = expressAsyncHandler(async (req, res) => {
     res.status(201).json({ data: subCategory });
 });
 
-// Get ==> "/api/v1/categories/:categoryId/subcategories"
+// @desc   ===> Get SubCategories for category id
+// @route  ===> Get "/api/v1/categories/:categoryId/subcategories"
 
 // @desc   ===> Get All SubCategories 
 // @route  ===> Get  /api/v1/subcategories
@@ -33,8 +34,13 @@ export const getSubcategories = expressAsyncHandler (async (req ,res) => {
     const limit = req.query.limit * 1 || 5
     const skip = (page - 1) * limit
 
+    let filterObject = {}
+    if(req.params.categoryId) {
+        filterObject = {category : req.params.categoryId}
+    }
+
     const subCategories = await SubCategoryModel
-        .find()
+        .find(filterObject)
         .skip(skip)
         .limit(limit)
         .populate({path: "category" , select: "name -_id"})
