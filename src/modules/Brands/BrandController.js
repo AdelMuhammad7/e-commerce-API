@@ -32,7 +32,7 @@ export const createBrand = expressAsyncHandler( async (req ,res) => {
     const name = req.body.name;
 
     const brand = await BrandModel.create({name , slug: slugify(name )} );
-    res.status(201).json({data: brand});
+    res.status(201).json({data: brand , msg: "created successfully..."});
 
 })
 

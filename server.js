@@ -6,6 +6,8 @@ import { loggerWithMorgan } from "./src/config/logger.js"
 import { router as categoryRoute } from "./src/modules/Categories/categoryRoutes.js"
 import { router as subCategoryRoute } from "./src/modules/SubCategories/subCategoryRoutes.js"
 import { router as BrandRoute } from "./src/modules/Brands/BrandRoutes.js"
+import { router as AttributeRoutes } from "./src/modules/Attributes/attributeRoutes.js"
+import { router as AttributeValuesRoutes } from "./src/modules/AttributesValues/AttributeValuesRoutes.js"
 import { ApiError, errorHandler } from "./src/middleware/globalErrorHandler.js"
 
 
@@ -28,6 +30,8 @@ app.use(express.json())
 app.use("/api/v1/categories" , categoryRoute)
 app.use("/api/v1/subcategories" , subCategoryRoute)
 app.use("/api/v1/brands" , BrandRoute)
+app.use("/api/v1/attributes" , AttributeRoutes)
+app.use("/api/v1/attributeValues" , AttributeValuesRoutes)
 
 // if not found route
 app.use( (req , res , next)=> {

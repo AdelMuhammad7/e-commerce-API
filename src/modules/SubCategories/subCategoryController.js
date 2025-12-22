@@ -19,7 +19,7 @@ export const createSubCategory = expressAsyncHandler(async (req, res) => {
         category: categoryId
     })
 
-    res.status(201).json({ data: subCategory });
+    res.status(201).json({ data: subCategory , msg: "created successfully..."});
 });
 
 // @desc   ===> Get SubCategories for category id

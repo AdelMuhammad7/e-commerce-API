@@ -13,7 +13,7 @@ export const getCategories = expressAsyncHandler( async (req ,res) => {
     const limit = req.query.limit * 1 || 5
     const skip = (page - 1) * limit
 
-    const categories = await CategoryModel.find({}).skip(skip).limit(limit)
+    const categories = await CategoryModel.find().skip(skip).limit(limit)
     
     res.status(200).json({
         results: categories.length,
@@ -36,7 +36,7 @@ export const getCategory = expressAsyncHandler( async (req , res , next) => {
     if(!category){
         return next(ApiError(`not found category for this id ${id}` , 404))
     }
-
+    
     res.status(200).json({
         data: category,
         msg: "success"
@@ -97,6 +97,6 @@ export const createCategory = expressAsyncHandler( async (req ,res) => {
     const name = req.body.name;
 
     const category = await CategoryModel.create({name , slug: slugify(name )} );
-    res.status(201).json({data: category});
+    res.status(201).json({data: category , msg: "created successfully..."});
 
 })
