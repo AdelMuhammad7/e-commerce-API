@@ -7,6 +7,7 @@ import { router as categoryRoute } from "./src/modules/Categories/categoryRoutes
 import { router as subCategoryRoute } from "./src/modules/SubCategories/subCategoryRoutes.js"
 import { router as BrandRoute } from "./src/modules/Brands/BrandRoutes.js"
 import { router as AttributeRoutes } from "./src/modules/Attributes/attributeRoutes.js"
+import { router as ProductRoutes } from "./src/modules/Products/productRoutes.js"
 import { router as AttributeValuesRoutes } from "./src/modules/AttributesValues/AttributeValuesRoutes.js"
 import { ApiError, errorHandler } from "./src/middleware/globalErrorHandler.js"
 
@@ -32,6 +33,7 @@ app.use("/api/v1/subcategories" , subCategoryRoute)
 app.use("/api/v1/brands" , BrandRoute)
 app.use("/api/v1/attributes" , AttributeRoutes)
 app.use("/api/v1/attributeValues" , AttributeValuesRoutes)
+app.use("/api/v1/products" , ProductRoutes)
 
 // if not found route
 app.use( (req , res , next)=> {

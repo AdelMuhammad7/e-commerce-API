@@ -2,6 +2,7 @@ import {CategoryModel} from "./categoryModel.js"
 import slugify from "slugify"
 import expressAsyncHandler from "express-async-handler"
 import { ApiError } from "../../middleware/globalErrorHandler.js"
+import { SubCategoryModel } from "../SubCategories/subCategoryModel.js"
 
 
 // @desc   ===> Get All Categories
@@ -30,15 +31,19 @@ export const getCategories = expressAsyncHandler( async (req ,res) => {
 // @access ===> public
 export const getCategory = expressAsyncHandler( async (req , res , next) => {
     const id = req.params.id
-    
-    const category = await CategoryModel.findById(id)
 
+    const category = await CategoryModel.findById(id)
     if(!category){
         return next(ApiError(`not found category for this id ${id}` , 404))
     }
+
+    const subCategories  = await SubCategoryModel.find({category : id})
     
     res.status(200).json({
-        data: category,
+        data: {
+            ...category.toObject(),
+            subCategories,
+        },
         msg: "success"
     })
 })

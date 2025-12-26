@@ -1,0 +1,347 @@
+[
+  {
+    "title": "Product 1",
+    "description": "High quality product with modern design",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879_t.png"
+    ],
+    "price": 1200,
+    "priceAfterDiscount": 950,
+    "stock": 40,
+    "sold": 5,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.2,
+    "ratingQuantity": 12
+  },
+  {
+    "title": "Product 2",
+    "description": "Durable product for daily use",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png"
+    ],
+    "price": 900,
+    "priceAfterDiscount": 750,
+    "stock": 60,
+    "sold": 10,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4,
+    "ratingQuantity": 8
+  },
+  {
+    "title": "Product 3",
+    "description": "Best seller with premium materials",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/71s7kM0+3PL._AC_SY879_t.png"
+    ],
+    "price": 1500,
+    "priceAfterDiscount": 1200,
+    "stock": 30,
+    "sold": 20,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.6,
+    "ratingQuantity": 25
+  },
+  {
+    "title": "Product 4",
+    "description": "Affordable and practical choice",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/61U7T1koQqL._AC_SY879_t.png",
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png"
+    ],
+    "price": 700,
+    "priceAfterDiscount": 600,
+    "stock": 80,
+    "sold": 15,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 3.9,
+    "ratingQuantity": 6
+  },
+  {
+    "title": "Product 5",
+    "description": "Premium look with strong performance",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png"
+    ],
+    "price": 2000,
+    "priceAfterDiscount": 1700,
+    "stock": 25,
+    "sold": 18,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.8,
+    "ratingQuantity": 40
+  },
+
+  {
+    "title": "Product 6",
+    "description": "Compact and lightweight product",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png"
+    ],
+    "price": 650,
+    "priceAfterDiscount": 520,
+    "stock": 90,
+    "sold": 22,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.1,
+    "ratingQuantity": 14
+  },
+
+  {
+    "title": "Product 7",
+    "description": "Reliable product with long lifespan",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png"
+    ],
+    "price": 1100,
+    "priceAfterDiscount": 900,
+    "stock": 55,
+    "sold": 12,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.3,
+    "ratingQuantity": 19
+  },
+
+  {
+    "title": "Product 8",
+    "description": "Stylish product with great value",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71s7kM0+3PL._AC_SY879_t.png",
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png"
+    ],
+    "price": 1300,
+    "priceAfterDiscount": 1050,
+    "stock": 35,
+    "sold": 17,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.5,
+    "ratingQuantity": 21
+  },
+
+  {
+    "title": "Product 9",
+    "description": "Smart choice for everyday needs",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png"
+    ],
+    "price": 850,
+    "priceAfterDiscount": 700,
+    "stock": 70,
+    "sold": 11,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4,
+    "ratingQuantity": 9
+  },
+
+  {
+    "title": "Product 10",
+    "description": "High demand product with solid build",
+    "image": "https://fakestoreapi.com/img/71s7kM0+3PL._AC_SY879_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png"
+    ],
+    "price": 1600,
+    "priceAfterDiscount": 1350,
+    "stock": 28,
+    "sold": 19,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.7,
+    "ratingQuantity": 33
+  },
+  {
+    "title": "Product 11",
+    "description": "Elegant product with premium materials",
+    "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_t.png",
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png"
+    ],
+    "price": 1800,
+    "priceAfterDiscount": 1500,
+    "stock": 32,
+    "sold": 14,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.6,
+    "ratingQuantity": 27
+  },
+  {
+    "title": "Product 12",
+    "description": "Comfortable and reliable everyday product",
+    "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png",
+      "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png"
+    ],
+    "price": 950,
+    "priceAfterDiscount": 820,
+    "stock": 65,
+    "sold": 9,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.1,
+    "ratingQuantity": 11
+  },
+  {
+    "title": "Product 13",
+    "description": "Modern design with powerful performance",
+    "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/71s7kM0+3PL._AC_SY879_t.png"
+    ],
+    "price": 1400,
+    "priceAfterDiscount": 1150,
+    "stock": 38,
+    "sold": 16,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.4,
+    "ratingQuantity": 18
+  },
+  {
+    "title": "Product 14",
+    "description": "Strong build for long-term usage",
+    "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_t.png",
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png"
+    ],
+    "price": 1250,
+    "priceAfterDiscount": 1000,
+    "stock": 48,
+    "sold": 13,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.3,
+    "ratingQuantity": 16
+  },
+  {
+    "title": "Product 15",
+    "description": "Lightweight product with stylish finish",
+    "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png"
+    ],
+    "price": 780,
+    "priceAfterDiscount": 650,
+    "stock": 85,
+    "sold": 21,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.0,
+    "ratingQuantity": 10
+  },
+  {
+    "title": "Product 16",
+    "description": "Premium quality with elegant look",
+    "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png"
+    ],
+    "price": 2100,
+    "priceAfterDiscount": 1850,
+    "stock": 22,
+    "sold": 19,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.9,
+    "ratingQuantity": 45
+  },
+  {
+    "title": "Product 17",
+    "description": "Affordable product with great value",
+    "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_t.png"
+    ],
+    "price": 600,
+    "priceAfterDiscount": 520,
+    "stock": 95,
+    "sold": 26,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 3.8,
+    "ratingQuantity": 7
+  },
+  {
+    "title": "Product 18",
+    "description": "Balanced product with solid performance",
+    "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_t.png",
+      "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UX679_t.png"
+    ],
+    "price": 1050,
+    "priceAfterDiscount": 880,
+    "stock": 58,
+    "sold": 15,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.2,
+    "ratingQuantity": 13
+  },
+  {
+    "title": "Product 19",
+    "description": "High demand product with premium finish",
+    "image": "https://fakestoreapi.com/img/71s7kM0+3PL._AC_SY879_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71s7kM0+3PL._AC_SY879_t.png",
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png"
+    ],
+    "price": 1550,
+    "priceAfterDiscount": 1300,
+    "stock": 34,
+    "sold": 18,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.6,
+    "ratingQuantity": 29
+  },
+  {
+    "title": "Product 20",
+    "description": "Smart product designed for comfort",
+    "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png",
+    "gallery": [
+      "https://fakestoreapi.com/img/71HblAHs5xL._AC_UX679_t.png",
+      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UX679_t.png"
+    ],
+    "price": 980,
+    "priceAfterDiscount": 840,
+    "stock": 62,
+    "sold": 12,
+    "category": "692ec7c7a3fa68f5a387b820",
+    "brand": "6942d58279086f4e9f6626fa",
+    "ratingAverage": 4.1,
+    "ratingQuantity": 15
+  }
+]
