@@ -120,7 +120,6 @@ export function updateProductValidator () {
         check("id")
             .notEmpty().withMessage("product id required")
             .isMongoId().withMessage("invalid product id format"),
-            
         validatorMiddleware()
     ]
 }

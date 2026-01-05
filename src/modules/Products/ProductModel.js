@@ -64,4 +64,10 @@ const ProductSchema = new mongoose.Schema({
 
 } , {timestamps: true })
 
+// mongoose query this happen after any query (find - findbyid , ....) this to make populate to return name not only id
+ProductSchema.pre(/^find/, function (next) {
+  this.populate({ path: "category subCategory brand", select: "name" })
+  next()
+})
+
 export const ProductModel = mongoose.model("Product" , ProductSchema)
