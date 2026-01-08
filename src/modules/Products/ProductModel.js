@@ -70,4 +70,26 @@ ProductSchema.pre(/^find/, function (next) {
   next()
 })
 
+const setImageUrl = (doc) => {
+
+    if (doc.image) {
+        doc.image = `${process.env.BASE_URL}/${doc.image}`;
+    }
+
+    if (doc.gallery && Array.isArray(doc.gallery)) {
+        doc.gallery = doc.gallery.map((el) => {
+            return `${process.env.BASE_URL}/${el}`;
+        });
+    }
+};
+
+ProductSchema.post("init", (doc) => {
+    setImageUrl(doc);
+});
+
+ProductSchema.post("save", (doc) => {
+    setImageUrl(doc);
+});
+
+
 export const ProductModel = mongoose.model("Product" , ProductSchema)

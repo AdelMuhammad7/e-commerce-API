@@ -99,5 +99,5 @@ export const createOne = (model) =>
         const document = await model.create(req.body);
         res.status(201).json({data: document , msg: "created successfully..."});
     
-    })
+})
 

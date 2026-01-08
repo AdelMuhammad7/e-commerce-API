@@ -18,10 +18,9 @@ export function createSubCategoryValidator () {
     return [
         check('name')
             .notEmpty().withMessage('SubCategory name required')
-            .isLength({min : 3}).withMessage('too short length of SubCategory name')
-            .isLength({max: 32}).withMessage("too much length of SubCategory name"),
+            .isLength({min : 2}).withMessage('too short length of SubCategory name'),
         
-        check('categoryId')
+        check('category')
             .isMongoId().withMessage("invaild category id format"),
 
         check("name").custom((val , {req})=> {

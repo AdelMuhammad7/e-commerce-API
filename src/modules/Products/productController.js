@@ -1,9 +1,58 @@
 import expressAsyncHandler from "express-async-handler"
 import { ProductModel } from "./ProductModel.js"
 import { ApiError } from "../../middleware/globalErrorHandler.js"
-import qs from "qs"
-import ApiFeatures from "../../utils/apiFeatures.js"
+import multer from "multer";
 import { createOne, deleteOne, getAll, getOne, updateOne } from "../../utils/handlersFactory.js"
+import sharp from "sharp";
+import { v4 as uuidv4 } from 'uuid';
+import { uploadMixOfImages } from "../../middleware/uploadImageMiddleware.js";
+
+
+
+// upload images
+export const uploadProductImage = uploadMixOfImages([
+    {name: "image" , maxCount: 1},
+    {name: "gallery" , maxCount: 10}
+])
+
+// resize img with sharp
+export const resizeImage = expressAsyncHandler(async (req, res, next) => {
+
+    // cover image
+    if (req.files?.image) {
+        const fileName = `product-${uuidv4()}-${Date.now()}-cover.jpeg`;
+
+        await sharp(req.files.image[0].buffer)
+            .resize(2000, 1330)
+            .toFormat("jpeg")
+            .jpeg({ quality: 90 })
+            .toFile(`uploads/products/${fileName}`);
+
+        req.body.image = `products/${fileName}`;
+    }
+
+    // gallery images
+    if (req.files?.gallery) {
+        req.body.gallery = [];
+
+        await Promise.all(
+            req.files.gallery.map(async (img, index) => {
+                const imgName = `product-${uuidv4()}-${Date.now()}-${index + 1}.jpeg`;
+
+                await sharp(img.buffer)
+                    .resize(2000, 1330)
+                    .toFormat("jpeg")
+                    .jpeg({ quality: 90 })
+                    .toFile(`uploads/products/${imgName}`);
+
+                req.body.gallery.push(`products/${imgName}`);
+            })
+        );
+    }
+
+    next();
+});
+
 
 
 

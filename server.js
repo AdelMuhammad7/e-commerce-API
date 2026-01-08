@@ -1,5 +1,9 @@
+import path from "path"
+import { fileURLToPath } from "url";
+
 import express from "express"
 import dotenv from "dotenv"
+
 import { databaseConnection } from "./src/config/db.js"
 import { loggerWithMorgan } from "./src/config/logger.js"
 
@@ -18,6 +22,10 @@ dotenv.config({ path: "config.env" })
 // connect with database
 databaseConnection()
 
+// dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 // express app
 const app = express()
 
@@ -26,6 +34,8 @@ const app = express()
 loggerWithMorgan(app)
 // >>>>>>>>>>>> to read body
 app.use(express.json())
+// to make folder uploads is serve to application
+app.use(express.static(path.join(__dirname , "uploads")))
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Mount routes
 app.use("/api/v1/categories" , categoryRoute)

@@ -46,19 +46,19 @@ export function createProductValidator () {
 
         check('subCategory')
             .optional()
-            .isMongoId().withMessage('invaild id format')
-            .isArray().withMessage('subCategory must be an array')
+            .isMongoId().withMessage('invaild id format'),
+            // .isArray().withMessage('subCategory must be an array')
 // subcategoryIds >> Array .. i should check that is exist in database 
     // using find()
-            .custom(
-                (subCategoryIds)=> SubCategoryModel.find(
-                    {_id : {$exists: true , $in : subCategoryIds}}).then((result)=> {
-                        if(result.length < 1 || result.length !== subCategoryIds.length){
-                            return Promise.reject("invaild subCategory ids")
-                        }
-                    }
-                )
-            )
+            // .custom(
+            //     (subCategoryIds)=> SubCategoryModel.find(
+            //         {_id : {$exists: true , $in : subCategoryIds}}).then((result)=> {
+            //             if(result.length < 1 || result.length !== subCategoryIds.length){
+            //                 return Promise.reject("invaild subCategory ids")
+            //             }
+            //         }
+            //     )
+            // )
     // using aggregate() but here find is better 
             // .custom((subCategoryIds) =>
             //     SubCategoryModel.aggregate([
@@ -71,27 +71,27 @@ export function createProductValidator () {
             //     })
             // )
 // make another custom to identify subcategories related to category id or not
-            .custom((value , {req}) => SubCategoryModel.find({category: req.body.category}).then(
-                (subCategories)=> {
-                    const subCategoriesIdsInDB = []
-                    subCategories.forEach((el)=> {
-                        subCategoriesIdsInDB.push(el._id.toString())
-                    })
+            // .custom((value , {req}) => SubCategoryModel.find({category: req.body.category}).then(
+            //     (subCategories)=> {
+            //         const subCategoriesIdsInDB = []
+            //         subCategories.forEach((el)=> {
+            //             subCategoriesIdsInDB.push(el._id.toString())
+            //         })
 
-                    const checker = value.every((v) => subCategoriesIdsInDB.includes(v))
-                    if(!checker) {
-                        return Promise.reject("subCategory is not related to Category")
-                    }
-                }   
-            )),
+            //         const checker = value.every((v) => subCategoriesIdsInDB.includes(v))
+            //         if(!checker) {
+            //             return Promise.reject("subCategory is not related to Category")
+            //         }
+            //     }   
+            // )),
         check('brand')
             .optional()
-            .isMongoId().withMessage('invaild id format')
-            .custom((brandId)=> BrandModel.findById(brandId).then((brand)=> {
-                if(!brand) {
-                    return Promise.reject(`No Brand found for this id ${brandId}`)
-                }
-            })),
+            .isMongoId().withMessage('invaild id format'),
+            // .custom((brandId)=> BrandModel.findById(brandId).then((brand)=> {
+            //     if(!brand) {
+            //         return Promise.reject(`No Brand found for this id ${brandId}`)
+            //     }
+            // })),
         check('ratingAverage')
             .optional()
             .isNumeric().withMessage('product ratingAverage must be number')

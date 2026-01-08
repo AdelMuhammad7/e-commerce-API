@@ -18,5 +18,25 @@ const categorySchema = new mongoose.Schema({
 
 } , {timestamps: true })
 
+
+// middelware from mongoose to retuen urlIMAGE
+categorySchema.post('init', function(doc) {
+  if(doc.image){
+    const imageURL = `${process.env.BASE_URL}/${doc.image}`;
+
+    doc.image = imageURL
+  } 
+});
+
+categorySchema.post('save', function(doc) {
+  if(doc.image){
+    const imageURL = `${process.env.BASE_URL}/${doc.image}`;
+
+    doc.image = imageURL
+  } 
+});
+
+
+
 // >>>>> 2- create model >>> this model can do CRUD operations 
 export const CategoryModel = mongoose.model('Category', categorySchema);

@@ -1,5 +1,28 @@
 import {SubCategoryModel} from "./subCategoryModel.js"
 import { createOne, deleteOne, getAll, getOne, updateOne } from "../../utils/handlersFactory.js";
+import sharp from "sharp";
+import { v4 as uuidv4 } from 'uuid';
+import expressAsyncHandler from "express-async-handler";
+import { uploadSingleImage } from "../../middleware/uploadImageMiddleware.js";
+
+// upload image with multer and sharp using memory storage
+export const subCategoryImageUpload = uploadSingleImage('image')
+
+export const resizeImage = expressAsyncHandler(async (req , res , next) => {
+    const fileName = `subCategory-${uuidv4()}-${Date.now()}.jpeg`
+    if(req.file) {
+
+        await sharp(req.file.buffer)
+            .resize(1280 , 980)
+            .toFormat('jpeg')
+            .jpeg({quality : 100})
+            .toFile(`uploads/subCategories/${fileName}`)
+    
+        req.body.image = `subCategories/${fileName}`
+    }
+
+    next();
+})
 
 // @desc   ===> Create SubCategory
 // @route  ===> POST  /api/v1/subcategories

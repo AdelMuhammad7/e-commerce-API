@@ -1,15 +1,15 @@
 import express from "express";
-import { createProduct, deleteProduct, getProduct, getProducts, updateProduct } from "./productController.js";
+import { createProduct, deleteProduct, getProduct, getProducts, resizeImage, updateProduct, uploadProductImage } from "./productController.js";
 import { createProductValidator, deleteProductValidator, getProductValidator, updateProductValidator } from "./productValidator.js";
 
 export const router = express.Router()
 
 router.route("/")
     .get(getProducts)
-    .post(createProductValidator() , createProduct)
+    .post(uploadProductImage , resizeImage , createProductValidator() , createProduct)
 
 
 router.route("/:id")
     .get(getProductValidator(), getProduct)
-    .put(updateProductValidator(), updateProduct)
+    .put(uploadProductImage , resizeImage , updateProductValidator(), updateProduct)
     .delete(deleteProductValidator(), deleteProduct)

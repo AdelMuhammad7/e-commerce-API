@@ -25,4 +25,21 @@ const subCategorySchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
+// middelware from mongoose to retuen urlIMAGE
+subCategorySchema.post('init', function(doc) {
+  if(doc.image){
+    const imageURL = `${process.env.BASE_URL}/${doc.image}`;
+
+    doc.image = imageURL
+  } 
+});
+
+subCategorySchema.post('save', function(doc) {
+  if(doc.image){
+    const imageURL = `${process.env.BASE_URL}/${doc.image}`;
+
+    doc.image = imageURL
+  } 
+});
+
 export const SubCategoryModel = mongoose.model("SubCategory" , subCategorySchema)
