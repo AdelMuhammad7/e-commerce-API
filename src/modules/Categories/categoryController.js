@@ -36,17 +36,17 @@ export const getCategory = getOne(CategoryModel)
 
 // @desc   ===> update Category by id
 // @route  ===> PUT  /api/v1/categories/:id
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const updateCategory = updateOne(CategoryModel)
 
 
 // @desc   ===> Delete Category
 // @route  ===> DELETE  /api/v1/categories/:id
-// @access ===> Private
+// @access ===> Private => [admin]
 export const deleteCategory = deleteOne(CategoryModel)
 
 
 // @desc   ===> Create Category
 // @route  ===> POST  /api/v1/categories
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const createCategory = createOne(CategoryModel)

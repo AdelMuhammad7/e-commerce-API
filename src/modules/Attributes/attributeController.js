@@ -4,7 +4,7 @@ import { createOne, deleteOne, getAll, getOne, updateOne } from "../../utils/han
 
 // @desc   ===> Create Attribute
 // @route  ===> POST  /api/v1/attributes
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const createAttribute = createOne(AttributeModel)
 
 // @desc   ===> get all Attributes
@@ -22,13 +22,13 @@ export const getAttribute = getOne(AttributeModel)
 
 // @desc   ===> Update Attribute
 // @route  ===> PUT  /api/v1/attributes/:id
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const UpdateAttribute = updateOne(AttributeModel)
 
 
 // @desc   ===> Delete Attribute
 // @route  ===> DELETE  /api/v1/attributes/:id
-// @access ===> Private
+// @access ===> Private => [admin]
 export const deleteAttribute = deleteOne(AttributeModel)
 
 

@@ -105,18 +105,18 @@ export const getProduct = getOne(ProductModel)
 
 // @desc   ===> Delete Product
 // @route  ===> DELETE  /api/v1/products/:id
-// @access ===> Private
+// @access ===> Private => [admin]
 export const deleteProduct = deleteOne(ProductModel)
 
 
 
 // @desc   ===> Create Product
 // @route  ===> POST  /api/v1/products
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const createProduct = createOne(ProductModel)
 
 
 // @desc   ===> update Product by id
 // @route  ===> PUT  /api/v1/products/:id
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const updateProduct = updateOne(ProductModel)

@@ -2,16 +2,6 @@ import { check , body } from "express-validator";
 import { validatorMiddleware } from "../../middleware/validatorMiddleware.js";
 import slugify from "slugify";
 
-export function getBrandValidator() {
-  return [
-    check("id")
-      .notEmpty().withMessage("brand id required")
-      .isMongoId().withMessage("invalid brand id format"),
-      
-    validatorMiddleware()
-  ];
-}
-
 
 export function createBrandValidator () {
     return [
@@ -25,6 +15,16 @@ export function createBrandValidator () {
         }),
         validatorMiddleware()
     ]
+}
+
+export function getBrandValidator() {
+  return [
+    check("id")
+      .notEmpty().withMessage("brand id required")
+      .isMongoId().withMessage("invalid brand id format"),
+      
+    validatorMiddleware()
+  ];
 }
 
 export function updateBrandValidator () {

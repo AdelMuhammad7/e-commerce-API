@@ -32,13 +32,13 @@ export const getBrands = getAll(BrandModel)
 
 // @desc   ===> Create Brand
 // @route  ===> POST  /api/v1/brands
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const createBrand = createOne(BrandModel)
 
 
 // @desc   ===> Delete Brand
 // @route  ===> DELETE  /api/v1/brands/:id
-// @access ===> Private
+// @access ===> Private => [admin]
 export const deleteBrand = deleteOne(BrandModel)
 
 
@@ -50,5 +50,5 @@ export const getBrand = getOne(BrandModel)
 
 // @desc   ===> update Brand by id
 // @route  ===> PUT  /api/v1/brands/:id
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const updateBrand = updateOne(BrandModel)

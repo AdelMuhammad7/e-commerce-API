@@ -26,7 +26,7 @@ export const resizeImage = expressAsyncHandler(async (req , res , next) => {
 
 // @desc   ===> Create SubCategory
 // @route  ===> POST  /api/v1/subcategories
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const createSubCategory = createOne(SubCategoryModel)
 
 // @desc   ===> Get SubCategories for category id
@@ -47,12 +47,12 @@ export const getSubCategory = getOne(SubCategoryModel)
 
 // @desc   ===> update subCategory by id
 // @route  ===> PUT  /api/v1/subcategories/:id
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const updateSubCategory = updateOne(SubCategoryModel)
 
 
 
 // @desc   ===> Delete subCategory
 // @route  ===> DELETE  /api/v1/subcategories/:id
-// @access ===> Private
+// @access ===> Private => [admin]
 export const deleteSubCategory = deleteOne(SubCategoryModel)

@@ -1,13 +1,12 @@
 import expressAsyncHandler from "express-async-handler";
 import { AttributeValuesModel } from "./AttributesValuesModel.js";
 import { ApiError } from "../../middleware/globalErrorHandler.js";
-import ApiFeatures from "../../utils/apiFeatures.js";
 import { deleteOne, getAll, getOne, updateOne } from "../../utils/handlersFactory.js";
 
 
 // @desc   ===> Create values
 // @route  ===> POST  /api/v1/attributeValues
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const createAttributeValues = expressAsyncHandler(async (req, res) => {
 
   const { values, attributeId } = req.body;
@@ -47,11 +46,11 @@ export const getAttributeValue = getOne(AttributeValuesModel)
 
 // @desc   ===> Delete Attribute Value
 // @route  ===> DELETE  /api/v1/attributeValues/:id
-// @access ===> Private
+// @access ===> Private => [admin]
 export const deleteAttributeValue = deleteOne(AttributeValuesModel)
 
 
 // @desc   ===> update attributeValue by id
 // @route  ===> PUT  /api/v1/attributeValue/:id
-// @access ===> Private
+// @access ===> Private => [admin , manager]
 export const updateAttributeValue = updateOne(AttributeValuesModel)
