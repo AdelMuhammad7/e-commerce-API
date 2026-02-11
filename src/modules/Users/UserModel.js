@@ -32,7 +32,6 @@ const userSchema = new mongoose.Schema({
         enum : ["user" , "manager" , "admin"],
         default : "user"
     },
-
     status : {
         type : Boolean,
         default : true

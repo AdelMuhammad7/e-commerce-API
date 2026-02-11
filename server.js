@@ -7,6 +7,8 @@ import dotenv from "dotenv"
 import { databaseConnection } from "./src/config/db.js"
 import { loggerWithMorgan } from "./src/config/logger.js"
 
+import { ApiError, errorHandler } from "./src/middleware/globalErrorHandler.js"
+
 import { router as categoryRoute } from "./src/modules/Categories/categoryRoutes.js"
 import { router as subCategoryRoute } from "./src/modules/SubCategories/subCategoryRoutes.js"
 import { router as BrandRoute } from "./src/modules/Brands/BrandRoutes.js"
@@ -15,7 +17,7 @@ import { router as ProductRoutes } from "./src/modules/Products/productRoutes.js
 import { router as UserRoutes } from "./src/modules/Users/UserServices/userRoute.js"
 import { router as AuthRoutes } from "./src/modules/Users/AuthServices/authRoutes.js"
 import { router as AttributeValuesRoutes } from "./src/modules/AttributesValues/AttributeValuesRoutes.js"
-import { ApiError, errorHandler } from "./src/middleware/globalErrorHandler.js"
+
 
 
 // .env
